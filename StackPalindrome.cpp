@@ -9,24 +9,44 @@ bool isPalindrome(const string &str)
     }
 
     for (char ch : str)
-    {if (s.top() != ch)
+    {
+        if (s.top() != ch)
         {
-            return false;}
+            return false;
+        }
         s.pop();
     }
     return true;
 }
 
+template <typename T>
+bool isPalindrome(const T &value)
+{
+    ostringstream converted;
+    converted << value;
+    return isPalindrome(converted.str());
+}
+
 int main()
 {
-    string testStr = "racecar";
+    string testStr = "namen";
+    int testNumber = 12321;
     if (isPalindrome(testStr))
     {
-        cout << testStr << " is a palindrome."<<endl;
+        cout << testStr << " is a palindrome." << endl;
     }
     else
     {
-        cout << testStr << " is not a palindrome."<<endl;
+        cout << testStr << " is not a palindrome." << endl;
+    }
+
+    if (isPalindrome(testNumber))
+    {
+        cout << testNumber << " is a palindrome." << endl;
+    }
+    else
+    {
+        cout << testNumber << " is not a palindrome." << endl;
     }
 
     return 0;
