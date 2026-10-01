@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+long long factorial(int n)
+{
+    if (n <= 1)
+    {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
+int main()
+{
+    int n;
+    cout << "Enter a non-negative integer: ";
+    cin >> n;
+
+    if (n < 0)
+    {
+        cout << "Factorial is not defined for negative numbers." << endl;
+    }
+    else
+    {
+      
+        cout << "Factorial of " << n << " is: " << factorial(n) << endl;
+        cout << "Factorial Series (0 to " << n << "):" << endl;
+        for (int i = 0; i <= n; i++)
+        {
+            cout << i << "! = " << factorial(i) << endl;
+        }
+    }
+
+    return 0;
+}
