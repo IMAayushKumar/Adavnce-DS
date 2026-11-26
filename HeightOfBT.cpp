@@ -30,4 +30,6 @@ int main()
     root->left->left = new Node(4);
     root->left->right = new Node(5);
 
-    cout << "Height of tree: " <<
+    cout << "Height of tree: " << height(root) << endl;
+    return 0;
+}
